@@ -19,8 +19,8 @@ RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 
 # mysql
-RUN wget http://mirror.centos.org/centos/7/os/x86_64/Packages/cyrus-sasl-lib-2.1.26-23.el7.i686.rpm
-RUN rpm -ivh cyrus-sasl-lib-2.1.26-23.el7.i686.rpm
+#RUN wget http://mirror.centos.org/centos/7/os/x86_64/Packages/cyrus-sasl-lib-2.1.26-23.el7.i686.rpm
+#RUN rpm -ivh cyrus-sasl-lib-2.1.26-23.el7.i686.rpm
 RUN wget https://repo.mysql.com/mysql57-community-release-el6-9.noarch.rpm
 RUN rpm -Uvh mysql57-community-release-el6-9.noarch.rpm
 RUN yum -y install mysql-community-server
