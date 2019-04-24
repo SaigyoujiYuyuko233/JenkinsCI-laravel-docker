@@ -19,12 +19,12 @@ RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 
 # mysql
-#RUN wget http://mirror.centos.org/centos/7/os/x86_64/Packages/cyrus-sasl-lib-2.1.26-23.el7.i686.rpm
-#RUN rpm -ivh cyrus-sasl-lib-2.1.26-23.el7.i686.rpm
-RUN yum -y remove mysql mysql-server mysql-libs mysql-server
-RUN wget https://repo.mysql.com/mysql57-community-release-el6-9.noarch.rpm
-RUN rpm -Uvh mysql57-community-release-el6-9.noarch.rpm
-RUN yum -y install mysql-community-server
+RUN wget https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-community-server-5.7.25-1.el7.x86_64.rpm
+RUN rpm -Uvh mysql-community-server-5.7.25-1.el7.x86_64.rpm
+#RUN yum -y remove mysql mysql-server mysql-libs mysql-server
+#RUN wget https://repo.mysql.com/mysql57-community-release-el6-9.noarch.rpm
+#RUN rpm -Uvh mysql57-community-release-el6-9.noarch.rpm
+#RUN yum -y install mysql-community-server
 
 # phpunit
 RUN wget -c https://phar.phpunit.de/phpunit-4.8.phar
