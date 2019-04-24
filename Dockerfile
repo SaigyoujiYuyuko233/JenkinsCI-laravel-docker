@@ -12,8 +12,7 @@ RUN yum -y install wget epel-* g++ gcc gcc-c++ yum-utils
 # PHP 72
 RUN rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 RUN yum-config-manager --enable remi-php72
-RUN yum -y install php72*
-RUN systemctl start php72-php-fpm.service
+RUN yum -y install php72w php72w-cli php72w-fpm php72w-common php72w-devel php72w-embedded php72w-gd php72w-mbstring php72w-mysqlnd php72w-opcache php72w-pdo php72w-xml
 
 # composer
 RUN curl -sS https://getcomposer.org/installer | php
@@ -21,9 +20,6 @@ RUN mv composer.phar /usr/local/bin/composer
 
 # mysql
 RUN yum install mysql-community-server
-RUN systemctl start mysqld
-RUN mysql -e "create user 'travis'@'localhost' identified by '';"
-RUN mysql -e "CREATE DATABASE IF NOT EXISTS travis;"
 
 # phpunit
 RUN wget -c https://phar.phpunit.de/phpunit-4.8.phar
@@ -43,4 +39,6 @@ rm -f /lib/systemd/system/anaconda.target.wants/*;)
 
 VOLUME [ "/sys/fs/cgroup" ]
 
-CMD ["/usr/sbin/init"]
+COPY start_service.sh /root
+
+CMD ["/bin/bash start_service.sh"]
