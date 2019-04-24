@@ -1,16 +1,14 @@
 FROM centos:latest
 
-MAINTAINER SaigyoujiYuyuko <HGK-SaigyoujiYuyuko@outlook.com>
+MAINTAINER SaigyoujiYuyuko233 <HGK-SaigyoujiYuyuko@outlook.com>
 
 USER root
 WORKDIR /root
 
-RUN yum -y install wget epel-* g++ gcc gcc-c++
+RUN yum -y install wget epel-* g++ gcc gcc-c++ yum-utils
 
 # PHP 72
-RUN yum -y install yum-utils
 RUN yum-config-manager --enable remi-php72
-RUN yum -y install php72
 RUN yum -y install php72*
 RUN systemctl start php72-php-fpm.service
 
