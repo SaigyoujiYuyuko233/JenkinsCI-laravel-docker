@@ -19,7 +19,8 @@ RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 
 # mysql
-RUN rpm -Uvh mysql57-community-release-el6-9.noarch.rpm
+RUN wget https://repo.mysql.com/mysql80-community-release-el7-2.noarch.rpm
+RUN rpm -Uvh mysql80-community-release-el7-2.noarch.rpm
 RUN yum install mysql-community-server
 
 # phpunit
