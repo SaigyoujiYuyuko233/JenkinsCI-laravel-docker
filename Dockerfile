@@ -19,8 +19,7 @@ RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 
 # mysql
-RUN wget http://mirror.centos.org/centos/7/os/x86_64/Packages/libao-1.1.0-8.el7.x86_64.rpm
-RUN rpm -Uvh libao-1.1.0-8.el7.x86_64.rpm
+RUN yum -y install libao*
 RUN wget http://mirror.centos.org/centos/7/os/x86_64/Packages/libao-devel-1.1.0-8.el7.x86_64.rpm
 RUN rpm -Uvh libao-devel-1.1.0-8.el7.x86_64.rpm
 ##RUN yum -y install mysql-community-server
