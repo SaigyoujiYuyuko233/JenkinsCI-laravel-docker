@@ -24,10 +24,9 @@ RUN rpm -ivh libaio-0.3.109-13.el7.x86_64.rpm
 RUN yum -y install numactl
 
 RUN wget https://cdn.mysql.com//Downloads/MySQL-5.7/mysql-5.7.25-1.el7.x86_64.rpm-bundle.tar
-RUN tar -xvf mysql-5.7.25-1.el7.x86_64.rpm-bundle.tar
-
 RUN mkdir -p /usr/local/mysql
-RUN tar xvf /opt/software/mysql-5.7.22-1.el7.x86_64.rpm-bundle.tar  -C /usr/local/mysql; cd /usr/local/mysql/
+RUN tar xvf /opt/software/mysql-5.7.22-1.el7.x86_64.rpm-bundle.tar  -C /usr/local/mysql
+RUN cd /usr/local/mysql/
 
 RUN rpm -ivh mysql-community-libs-5.7.22-1.el7.x86_64.rpm
 RUN rpm -ivh mysql-community-client-5.7.22-1.el7.x86_64.rpm
