@@ -22,6 +22,7 @@ RUN mv composer.phar /usr/local/bin/composer
 RUN wget http://mirror.centos.org/centos/7/os/x86_64/Packages/libaio-0.3.109-13.el7.x86_64.rpm
 #RUN wget https://repo.mysql.com//mysql80-community-release-el7-2.noarch.rpm
 RUN rpm -ivh libaio-0.3.109-13.el7.x86_64.rpm
+RUN yum -y install numactl
 #RUN rpm -Uvh mysql80-community-release-el7-2.noarch.rpm
 #RUN yum -y install mysql-community-server
 RUN wget https://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-community-server-5.7.25-1.el7.x86_64.rpm
