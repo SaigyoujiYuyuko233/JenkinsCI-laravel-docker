@@ -5,12 +5,14 @@ MAINTAINER SaigyoujiYuyuko233 <HGK-SaigyoujiYuyuko@outlook.com>
 USER root
 WORKDIR /root
 
+ENV container docker
+
 RUN yum -y install wget epel-* g++ gcc gcc-c++ yum-utils
 
 # PHP 72
 RUN rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 RUN yum-config-manager --enable remi-php72
-RUN yum -y install php72w
+RUN yum -y install php72*
 RUN systemctl start php72-php-fpm.service
 
 # composer
