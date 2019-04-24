@@ -19,6 +19,7 @@ RUN curl -sS https://getcomposer.org/installer | php
 RUN mv composer.phar /usr/local/bin/composer
 
 # mysql
+RUN yum-config-manager --disable mysql56-community; yum-config-manager --enable mysql57-community-dmr
 RUN wget https://repo.mysql.com/mysql57-community-release-el6-9.noarch.rpm
 RUN rpm -Uvh mysql57-community-release-el6-9.noarch.rpm
 RUN yum -y install mysql-community-server
