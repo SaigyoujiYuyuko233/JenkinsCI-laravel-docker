@@ -9,7 +9,7 @@ RUN yum -y install wget epel-* g++ gcc gcc-c++ yum-utils
 
 # PHP 72
 RUN yum-config-manager --enable remi-php72
-RUN yum -y install php72*
+RUN yum -y install php72w
 RUN systemctl start php72-php-fpm.service
 
 # composer
