@@ -38,4 +38,4 @@ RUN chmod +x /usr/local/bin/phpunit
 
 COPY start_service.sh /root
 
-CMD /bin/bash start_service.sh
+ENTRYPOINT /bin/bash start_service.sh
