@@ -42,4 +42,4 @@ RUN (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == system
 
 VOLUME ['/sys/fs/cgroup']
 
-ENTRYPOINT /bin/bash start_service.sh
+CMD ['/usr/sbin/init']
