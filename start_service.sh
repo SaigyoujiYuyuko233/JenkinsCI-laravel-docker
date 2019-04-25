@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# init
+echo "init..."
+/usr/sbin/init
 
 echo "start the php-fpm service"
 serivce php72-php-fpm.service start
