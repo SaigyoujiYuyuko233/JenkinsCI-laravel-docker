@@ -34,8 +34,6 @@ RUN rpm -ivh mysql-community-devel-5.7.25-1.el7.x86_64.rpm
 
 RUN rm -rf mysql-*
 
-RUN /usr/bin/mysqladmin password
-
 # phpunit
 RUN wget -c https://phar.phpunit.de/phpunit-4.8.phar
 RUN cp phpunit-4.8.phar /usr/local/bin/phpunit
