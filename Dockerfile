@@ -7,7 +7,7 @@ WORKDIR /root
 
 ENV container docker
 
-RUN yum -y install wget epel-* g++ gcc gcc-c++ yum-utils net-tools; yum -y update
+RUN yum -y install wget epel-* g++ gcc gcc-c++ yum-utils net-tools unzip; yum -y update
 
 # PHP 72
 RUN rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
