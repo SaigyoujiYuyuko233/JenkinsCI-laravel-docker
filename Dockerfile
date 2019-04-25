@@ -38,4 +38,6 @@ RUN chmod +x /usr/local/bin/phpunit
 
 COPY start_service.sh /root
 
+VOLUME ['/sys/fs/cgroup']
+
 ENTRYPOINT /bin/bash start_service.sh
