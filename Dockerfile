@@ -33,8 +33,10 @@ RUN rpm -ivh mysql-community-server-5.7.25-1.el7.x86_64.rpm
 
 # phpunit
 RUN wget -c https://phar.phpunit.de/phpunit-4.8.phar
-RUN cp /home/hbu/phpunit-4.8.phar /usr/local/bin/phpunit
+RUN cp phpunit-4.8.phar /usr/local/bin/phpunit
 RUN chmod +x /usr/local/bin/phpunit
+
+
 
 RUN (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == \
 
