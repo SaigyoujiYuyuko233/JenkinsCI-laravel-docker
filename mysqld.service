@@ -9,8 +9,8 @@ After=syslog.target
 WantedBy=multi-user.target
 
 [Service]
-User=root
-Group=
+User=mysql
+Group=mysql
 
 Type=forking
 
@@ -18,9 +18,6 @@ PIDFile=/var/run/mysqld/mysqld.pid
 
 # Disable service start and stop timeout logic of systemd for mysqld service.
 TimeoutSec=0
-
-# Execute pre and post scripts as root
-PermissionsStartOnly=false
 
 # Needed to create system tables
 ExecStartPre=/usr/bin/mysqld_pre_systemd
