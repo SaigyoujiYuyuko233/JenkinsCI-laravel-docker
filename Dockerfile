@@ -32,6 +32,8 @@ RUN rpm -ivh mysql-community-client-5.7.25-1.el7.x86_64.rpm
 RUN rpm -ivh mysql-community-server-5.7.25-1.el7.x86_64.rpm
 RUN rpm -ivh mysql-community-devel-5.7.25-1.el7.x86_64.rpm
 
+COPY mysqld.service /usr/lib/systemd/system
+
 RUN rm -rf mysql-*
 
 # phpunit
@@ -43,4 +45,4 @@ RUN (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == system
 
 VOLUME ['/sys/fs/cgroup']
 
-ENTRYPOINT ['/usr/sbin/init;']
+ENTRYPOINT ['/usr/sbin/init']
