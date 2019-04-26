@@ -43,4 +43,4 @@ RUN (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == system
 
 VOLUME ['/sys/fs/cgroup']
 
-ENTRYPOINT ['/usr/sbin/init; systemctl start mysqld; ']
+ENTRYPOINT ['/usr/sbin/init;']
