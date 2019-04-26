@@ -33,7 +33,7 @@ RUN rpm -ivh mysql-community-server-5.7.25-1.el7.x86_64.rpm
 RUN rpm -ivh mysql-community-devel-5.7.25-1.el7.x86_64.rpm
 
 # config for mysql
-COPY my.cnf /etc
+#COPY my.cnf /etc
 
 RUN rm -rf mysql-*
 
